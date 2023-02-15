@@ -6,7 +6,7 @@ Summary:        Daemon handles (un)registering AppImages with the system
 License:        MIT
 Group:          System/Daemons
 Source0:        https://github.com/AppImageCommunity/appimaged/archive/refs/heads/appimaged-master.tar.gz
-Source1:        appimaged.service
+#Source1:        appimaged.service
 
 BuildRequires:  cmake
 BuildRequires:  autoconf
@@ -41,21 +41,21 @@ of AppImage files.
 
 %install
 %make_install -C build 
-mkdir -p %{buildroot}%{_bindir}
-install -m 0755 appimaged appimage.validate %{buildroot}%{_bindir}
+#mkdir -p %{buildroot}%{_bindir}
+#install -m 0755 appimaged appimage.validate %{buildroot}%{_bindir}
 
 # install systemd per user service
-mkdir -p %{buildroot}%{_userunitdir}
-install -m 0644 %{SOURCE1} %{buildroot}%{_userunitdir}/appimaged.service
+#mkdir -p %{buildroot}%{_userunitdir}
+#install -m 0644 %{SOURCE1} %{buildroot}%{_userunitdir}/appimaged.service
 
-%post
-%systemd_user_post appimaged.service
+#%post
+#%systemd_user_post appimaged.service
 
-%preun
-%systemd_user_preun appimaged.service
+#%preun
+#%systemd_user_preun appimaged.service
 
-%postun
-%systemd_user_postun appimaged.service
+#%postun
+#%systemd_user_postun appimaged.service
 
 %files
 %defattr(-,root,root)
