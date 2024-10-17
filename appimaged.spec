@@ -1,7 +1,7 @@
 Name:           appimaged
 Version:        10
 Release:        1
-URL:            http://www.appimage.org
+URL:            https://www.appimage.org
 Summary:        Daemon handles (un)registering AppImages with the system
 License:        MIT
 Group:          System/Daemons
